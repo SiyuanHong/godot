@@ -241,6 +241,7 @@ old results:
 <img width="947" alt="before test1" src="https://github.com/SiyuanHong/godot/assets/122408769/982ab190-1d7e-44df-bc20-4976de5cbda4">
 
 new result:
+
 <img width="949" alt="after test1" src="https://github.com/SiyuanHong/godot/assets/122408769/cc312b04-de38-48d0-828a-5429ddc1f296">
 
      The coverage improved by 100%.
@@ -256,6 +257,7 @@ old results:
 <img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/cba6be7d-5b84-4596-8b2d-2c1d71ef0ef1">
 
 new result:
+
 <img width="904" alt="after test2" src="https://github.com/SiyuanHong/godot/assets/122408769/585bacde-f216-40e6-836e-e22d8b4850d5">
 
      The coverage improved by 100%.
