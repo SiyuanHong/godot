@@ -24,7 +24,6 @@ of that part with OpenCppCoverage.
 
 ### Your own coverage tool
 Siyuan Hong
-Siyuan Hong
 
   Function 1
 
@@ -51,7 +50,7 @@ i identified three branches in this function(branch 0, 1,2):
  i identified two branches in this function(branch 3,4):
 
 ![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
-      
+
 they are not reached in the original test.
 
 Ruizhe Tao
@@ -65,7 +64,7 @@ a link to the commit: https://github.com/SiyuanHong/godot/commit/069884f92577786
 screenshot:
 
 2 branches with unique ids are identified in this function:
-  
+
 ![skew_uncovered](https://github.com/SiyuanHong/godot/assets/50838626/ba783274-4cb1-4709-b297-b55f52c24516)
 
 Function 2
@@ -106,7 +105,7 @@ Jiarui Pan
 
 Function 1
 
-Name: get_relative_transform_to_parent (https://github.com/SiyuanHong/godot/commit/8f3368781a76d6c3722a1ea3a8791a623f629722)
+Name: get_relative_transform_to_parent (https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe)
 
 Screenshot:
 
@@ -116,7 +115,7 @@ Four branches are identified as 0, 1, 2 and 3, contained by coverageDataOfPjrs. 
 
 Function 2
 
-Name: set_current (https://github.com/SiyuanHong/godot/commit/df84fe5b13f9e87a36027155b0462e0ad4b5f1cd)
+Name: set_current (https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe)
 
 Screenshot:
 
@@ -235,7 +234,7 @@ Jiarui Pan
 
 Test1
 
-a link to the commit: https://github.com/SiyuanHong/godot/commit/8f3368781a76d6c3722a1ea3a8791a623f629722
+a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe
 
 old results:
 
@@ -251,7 +250,7 @@ new result:
 
 Test2
 
-a link to the commit: https://github.com/SiyuanHong/godot/commit/df84fe5b13f9e87a36027155b0462e0ad4b5f1cd
+a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe
 
 old results:
 
@@ -273,6 +272,6 @@ Siyuan Hong: write methods for function instrumentation; deal with function set_
 
 Ruizhe Tao: write function instrumentation for `set_global_skew` and `set_global_scale`, and implement tests for these two functions to cover all branches
 
-Rui Chen: wrote function instrumentation for `set_environment` and `set_compositor` and their respective tests that coveres all branched conditions.  
+Rui Chen: wrote function instrumentation for `set_environment` and `set_compositor` and their respective tests that coveres all branched conditions.
 
 Jiarui Pan: completed implementation of tests for get_relative_transform_to_parent and set_current with the coverage measurement and improvement
