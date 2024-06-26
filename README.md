@@ -256,7 +256,7 @@ old results:
 <img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/cba6be7d-5b84-4596-8b2d-2c1d71ef0ef1">
 
 new result:
-<img width="942" alt="after test2" src="https://github.com/SiyuanHong/godot/assets/122408769/272fc707-699e-4d3f-8384-2ca4f1cd1ac6">
+<img width="904" alt="after test2" src="https://github.com/SiyuanHong/godot/assets/122408769/585bacde-f216-40e6-836e-e22d8b4850d5">
 
      The coverage improved by 100%.
 
