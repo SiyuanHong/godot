@@ -47,7 +47,7 @@ void initcoverageDataOfPjrs2(int inputNum) {
 void outputCoverageDataOfPjrs2() {
     std::cout << "Coverage Data (for camera_3d):" << std::endl;
     for (size_t i = 0; i < coverageDataOfPjrs2.size(); ++i) {
-        std::cout << "Branch " << i << ": " << (coverageDataOfPjrs2.at(i) ? "Executed" : "Not Executed") << std::endl;
+        std::cout << "set_current branch " << i << ": " << (coverageDataOfPjrs2.at(i) ? "Executed" : "Not Executed") << std::endl;
     }
 }
 

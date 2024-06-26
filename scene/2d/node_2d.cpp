@@ -45,7 +45,7 @@ void initcoverageDataOfPjrs(int inputNum) {
 void outputCoverageDataOfPjrs() {
     std::cout << "Coverage Data:" << std::endl;
     for (size_t i = 0; i < coverageDataOfPjrs.size(); ++i) {
-        std::cout << "Branch " << i << ": " << (coverageDataOfPjrs.at(i) ? "Executed" : "Not Executed") << std::endl;
+        std::cout << "get_relative_transform_to_parent branch " << i << ": " << (coverageDataOfPjrs.at(i) ? "Executed" : "Not Executed") << std::endl;
     }
 }
 

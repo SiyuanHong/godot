@@ -42,7 +42,6 @@
 
 TEST_CASE("[SceneTree][Camera3D] Getters and setters") {
 	Camera3D *test_camera = memnew(Camera3D);
-	initcoverageDataOfPjrs2(3);
 
 	SUBCASE("Cull mask") {
 		constexpr int cull_mask = (1 << 5) | (1 << 7) | (1 << 9);
@@ -147,21 +146,24 @@ TEST_CASE("[SceneTree][Camera3D] Getters and setters") {
     }
 
 	SUBCASE("[Camera3D][set_current] When p_enabled") {
+        initcoverageDataOfPjrs2(3);
 		test_camera->set_current(true);
 		CHECK(coverageDataOfPjrs2[0] == 1);
 		CHECK(coverageDataOfPjrs2[1] == 1);
 		CHECK(coverageDataOfPjrs2[2] == 0);
+        outputCoverageDataOfPjrs2();
 	}
 
 	SUBCASE("[Camera3D][set_current] Else") {
+        initcoverageDataOfPjrs2(3);
 		test_camera->set_current(false);
 		CHECK(coverageDataOfPjrs2[0] == 1);
 		CHECK(coverageDataOfPjrs2[1] == 0);
 		CHECK(coverageDataOfPjrs2[2] == 1);
+        outputCoverageDataOfPjrs2();
 	}
 
 	memdelete(test_camera);
-	outputCoverageDataOfPjrs2();
 }
 
 TEST_CASE("[SceneTree][Camera3D] Position queries") {

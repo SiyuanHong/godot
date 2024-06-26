@@ -39,7 +39,6 @@
 namespace TestNode2D {
 
 TEST_CASE("[SceneTree][Node2D]") {
-	initcoverageDataOfPjrs(4);
 
 	SUBCASE("[Node2D][Global Transform] Global Transform should be accessible while not in SceneTree.") { // GH-79453
 		Node2D *test_node = memnew(Node2D);
@@ -176,12 +175,15 @@ TEST_CASE("[SceneTree][Node2D]") {
     }
 
 	SUBCASE("[Node2D][get_relative_transform_to_parent] When p_parent == this") {
+        initcoverageDataOfPjrs(4);
 		Node2D *node = memnew(Node2D);
 		CHECK_EQ(node->get_relative_transform_to_parent(node), Transform2D());
 		memdelete(node);
+        outputCoverageDataOfPjrs();
 	}
 
 	SUBCASE("[Node2D][get_relative_transform_to_parent] When p_parent == parent_2d") {
+        initcoverageDataOfPjrs(4);
 		Node2D *parent = memnew(Node2D);
 		Node2D *child = memnew(Node2D);
 		parent->add_child(child);
@@ -191,9 +193,11 @@ TEST_CASE("[SceneTree][Node2D]") {
 
 		memdelete(child);
 		memdelete(parent);
+        outputCoverageDataOfPjrs();
 	}
 
 	SUBCASE("[Node2D][get_relative_transform_to_parent] Else") {
+        initcoverageDataOfPjrs(4);
 		Node2D *grandparent = memnew(Node2D);
 		Node2D *parent = memnew(Node2D);
 		Node2D *child = memnew(Node2D);
@@ -210,9 +214,9 @@ TEST_CASE("[SceneTree][Node2D]") {
 		memdelete(child);
 		memdelete(parent);
 		memdelete(grandparent);
+        outputCoverageDataOfPjrs();
 	}
 
-	outputCoverageDataOfPjrs();
 }
 
 } // namespace TestNode2D
