@@ -1,7 +1,7 @@
 # Report for Assignment 1
 
 ## Project chosen
-Name: Godot Engine 
+Name: Godot Engine
 
 URL: https://github.com/godotengine/godot.git
 
@@ -11,14 +11,14 @@ Programming language: C++
 ## Coverage measurement
 
 ### Existing tool
-name: OpenCppCoverage 
+name: OpenCppCoverage
 
-The way it was executed: After the development version of Godot compile( enabling it to be tested and be with debugged symbols), 
+The way it was executed: After the development version of Godot compile( enabling it to be tested and be with debugged symbols),
 run OpenCppCoverage withe command line like this: OpenCppCoverage --  ./bin/godot.windows.editor.dev.x86_64.exe --test
-the execuatable will run with all the tests and the OpenCppCoverage will check which part of the code is covered. 
+the execuatable will run with all the tests and the OpenCppCoverage will check which part of the code is covered.
 
-Because it is a really big project(it contains millions of lines of code), so we focus on the one part of the project which is the scene part, so we specificlly measure the coverage 
-of that part with OpenCppCoverage. 
+Because it is a really big project(it contains millions of lines of code), so we focus on the one part of the project which is the scene part, so we specificlly measure the coverage
+of that part with OpenCppCoverage.
 
 ![image](https://github.com/SiyuanHong/godot/assets/113177812/9202d40c-1cda-4ff4-b845-fa7c9eaf8603)
 
@@ -26,31 +26,31 @@ of that part with OpenCppCoverage.
 Siyuan Hong
 
   Function 1
-  
-  name: set_global_rotation 
-      
+
+  name: set_global_rotation
+
   a link to the commit: https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
-      
+
   screenshot:
-  
+
 i identified three branches in this function(branch 0, 1,2):
-      
+
 ![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
-      
+
  here you can see the first three branches are not reached in the original tests.
-      
+
   Function 2
-  
+
   name:get_rotation
-      
+
   a link to the commit: https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
-      
+
   screenshot:
-  
+
  i identified two branches in this function(branch 3,4):
-      
+
 ![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
-      
+
 they are not reached in the original test.
 
 Ruizhe Tao
@@ -64,7 +64,7 @@ a link to the commit: https://github.com/SiyuanHong/godot/commit/069884f92577786
 screenshot:
 
 2 branches with unique ids are identified in this function:
-  
+
 ![skew_uncovered](https://github.com/SiyuanHong/godot/assets/50838626/ba783274-4cb1-4709-b297-b55f52c24516)
 
 Function 2
@@ -101,6 +101,28 @@ Screenshot:
 Two branches with unique IDs are identified in this function.
 <img width="532" alt="compositor_uncovered" src="https://github.com/SiyuanHong/godot/assets/117285044/a0e6d918-67c4-4dea-8cba-290498c28c75">
 
+Jiarui Pan
+
+Function 1
+
+Name: get_relative_transform_to_parent (https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe)
+
+Screenshot:
+
+<img width="947" alt="before test1" src="https://github.com/SiyuanHong/godot/assets/122408769/a44cd384-abae-4ff4-a188-7a402463c4df">
+
+Four branches are identified as 0, 1, 2 and 3, contained by coverageDataOfPjrs. At this stage none of these branches are reached by the exisiting tests.
+
+Function 2
+
+Name: set_current (https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe)
+
+Screenshot:
+
+<img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/bdc3c18c-001b-49ff-be9d-7450292753b8">
+
+Three branches are identified as 0, 1 and 2. To seperate, container is differently named as coverageDataOfPjrs2. At this stage none of these branches are reached by the exisiting tests.
+
 ## Coverage improvement
 
 ### Individual tests
@@ -109,34 +131,36 @@ Siyuan Hong
 test1:
 
 a link to the commit:
+a link to the commit:
      https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
-	 
-old result: 
+
+old result:
      ![image](https://github.com/SiyuanHong/godot/assets/113177812/5d6d3622-1eed-482c-a810-3847174bed22)
 
-	 
+
 new result:
      ![image](https://github.com/SiyuanHong/godot/assets/113177812/751b8bfe-1a7c-46d7-b379-a9f0ca1c455a)
-	 
+
      the coverage improved by 100%.
-		 
+
      comment: because previously, this function is not covered by any tese case, so i just write a new test case to set one node with a rotation degree and see how does that function works.
      the condition branches include node with a parent node and without parent node, so i just write a parent node and childe node attached to it, and call set_global_rotation separately,
-     then all the three branches are reached. 
-    
+     then all the three branches are reached.
+
 test2:
 
 a link to the commit:
+a link to the commit:
      https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
-	 
+
 old result:
      ![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
-	 
+
 new result:
      ![image](https://github.com/SiyuanHong/godot/assets/113177812/751b8bfe-1a7c-46d7-b379-a9f0ca1c455a)
-	 
+
      the coverage improved by 50%.
-		 
+
      comment: because these two functions are highly correlated, so i merged the two test cases into just one, but it indeed tested two functions.
      because the system is complicated, and the arrtibute of "dirty" is protected, hard to figure out how to make its value as dirty, so this test case only
      cover the first branch.
@@ -206,6 +230,40 @@ new result: \
     This function was not testeed in orginal project, therefore, a new test is designed for this function.
     In the test case, both branch condition are reached. For the first branch, an new compositor object was created and set. For the second branch, to  set an invalid compositor object, I chose to create an 	compositor_effect. CHECK is done on each condition.
 
+Jiarui Pan
+
+Test1
+
+a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe
+
+old results:
+
+<img width="947" alt="before test1" src="https://github.com/SiyuanHong/godot/assets/122408769/982ab190-1d7e-44df-bc20-4976de5cbda4">
+
+new result:
+
+<img width="949" alt="after test1" src="https://github.com/SiyuanHong/godot/assets/122408769/cc312b04-de38-48d0-828a-5429ddc1f296">
+
+     The coverage improved by 100%.
+
+     Comment: Initially, no tests are responsible for this function, so a new testcase is created. According to the code, three cases diverge, thus, the testcase consists of three subcases: p_parent == this, p_parent == parent_2d and the rest. For each condition, content of the tests differs: for the first one, check if the transform by get_relative_transform_to_parent(node) returns the same as Transform2D() when p_parent is the node itself; for the second one, by linking the node to its parent node, check if the transform of the parent node is the same as child node; similarly, for the third one, by linking the node to its parent node and its grandparent node, check if the total transform of the node and its parent node is the same as the grandparent node. By do these, all branches are reached by the tests and coverage is improved.
+
+Test2
+
+a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a981b766665cf2fa0202d4bbe
+
+old results:
+
+<img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/cba6be7d-5b84-4596-8b2d-2c1d71ef0ef1">
+
+new result:
+
+<img width="904" alt="after test2" src="https://github.com/SiyuanHong/godot/assets/122408769/585bacde-f216-40e6-836e-e22d8b4850d5">
+
+     The coverage improved by 100%.
+
+     Comment: Initially, no tests are responsible for this function, so a new testcase is created. According to the code, two cases diverge, thus, the testcase consists of two subcases: when p_enabled and else. For the first condition, when set_current is true, the test checks if the function together with make_current are called while clear_current is not; likewise, the second subcase checks if the function together with clear_current are called while make_current is not. By do these, all branches are reached by the tests and coverage is improved.
+
 ### Overall
 
 
@@ -214,4 +272,6 @@ Siyuan Hong: write methods for function instrumentation; deal with function set_
 
 Ruizhe Tao: write function instrumentation for `set_global_skew` and `set_global_scale`, and implement tests for these two functions to cover all branches
 
-Rui Chen: wrote function instrumentation for `set_environment` and `set_compositor` and their respective tests that coveres all branched conditions.  
+Rui Chen: wrote function instrumentation for `set_environment` and `set_compositor` and their respective tests that coveres all branched conditions.
+
+Jiarui Pan: completed implementation of tests for get_relative_transform_to_parent and set_current with the coverage measurement and improvement

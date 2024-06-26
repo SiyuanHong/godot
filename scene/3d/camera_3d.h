@@ -39,6 +39,12 @@
 #include "scene/resources/compositor.h"
 #include "scene/resources/environment.h"
 
+#include <vector>
+
+extern std::vector<int> coverageDataOfPjrs2;
+void initcoverageDataOfPjrs2(int inputNum);
+void outputCoverageDataOfPjrs2();
+
 extern std::map<std::string, bool> coverage_environment_compositor;
 void init_coverage(std::string,int );
 void print_coverage();

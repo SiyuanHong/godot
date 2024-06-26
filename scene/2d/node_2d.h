@@ -35,6 +35,11 @@
 #include <vector>
 
 #include "scene/main/canvas_item.h"
+#include <vector>
+
+extern std::vector<int> coverageDataOfPjrs;
+void initcoverageDataOfPjrs(int inputNum);
+void outputCoverageDataOfPjrs();
 
 extern std::vector<int> coverageDataSetGlobalRotation;
 extern std::vector<int> coverageDataMoveX;

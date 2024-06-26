@@ -145,6 +145,24 @@ TEST_CASE("[SceneTree][Camera3D] Getters and setters") {
         print_coverage();
     }
 
+	SUBCASE("When p_enabled") {
+        initcoverageDataOfPjrs2(3);
+		test_camera->set_current(true);
+		CHECK(coverageDataOfPjrs2[0] == 1);
+		CHECK(coverageDataOfPjrs2[1] == 1);
+		CHECK(coverageDataOfPjrs2[2] == 0);
+        outputCoverageDataOfPjrs2();
+	}
+
+	SUBCASE("Else") {
+        initcoverageDataOfPjrs2(3);
+		test_camera->set_current(false);
+		CHECK(coverageDataOfPjrs2[0] == 1);
+		CHECK(coverageDataOfPjrs2[1] == 0);
+		CHECK(coverageDataOfPjrs2[2] == 1);
+        outputCoverageDataOfPjrs2();
+	}
+
 	memdelete(test_camera);
 }
 
