@@ -109,7 +109,7 @@ Name: get_relative_transform_to_parent (https://github.com/SiyuanHong/godot/comm
 
 Screenshot:
 
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/before%20test1.png)
+<img width="947" alt="before test1" src="https://github.com/SiyuanHong/godot/assets/122408769/a44cd384-abae-4ff4-a188-7a402463c4df">
 
 Four branches are identified as 0, 1, 2 and 3, contained by coverageDataOfPjrs. At this stage none of these branches are reached by the exisiting tests.
 
@@ -119,7 +119,7 @@ Name: set_current (https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086a98
 
 Screenshot:
 
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/before%20test2.png)
+<img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/bdc3c18c-001b-49ff-be9d-7450292753b8">
 
 Three branches are identified as 0, 1 and 2. To seperate, container is differently named as coverageDataOfPjrs2. At this stage none of these branches are reached by the exisiting tests.
 
@@ -238,11 +238,10 @@ a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086
 
 old results:
 
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/before%20test1.png)
-
+<img width="947" alt="before test1" src="https://github.com/SiyuanHong/godot/assets/122408769/982ab190-1d7e-44df-bc20-4976de5cbda4">
 
 new result:
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/after%20test1.png)
+<img width="949" alt="after test1" src="https://github.com/SiyuanHong/godot/assets/122408769/cc312b04-de38-48d0-828a-5429ddc1f296">
 
      The coverage improved by 100%.
 
@@ -254,11 +253,10 @@ a link to the commit: https://github.com/SiyuanHong/godot/commit/71915e9fa0e7086
 
 old results:
 
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/before%20test2.png)
-
+<img width="949" alt="before test2" src="https://github.com/SiyuanHong/godot/assets/122408769/cba6be7d-5b84-4596-8b2d-2c1d71ef0ef1">
 
 new result:
-![image](https://github.com/SiyuanHong/godot/blob/pjr/screenshots/after%20test2.png)
+<img width="942" alt="after test2" src="https://github.com/SiyuanHong/godot/assets/122408769/272fc707-699e-4d3f-8384-2ca4f1cd1ac6">
 
      The coverage improved by 100%.
 
