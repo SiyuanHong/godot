@@ -17,10 +17,14 @@ The way it was executed: After the development version of Godot compile( enablin
 run OpenCppCoverage withe command line like this: OpenCppCoverage --  ./bin/godot.windows.editor.dev.x86_64.exe --test
 the execuatable will run with all the tests and the OpenCppCoverage will check which part of the code is covered.
 
-Because it is a really big project(it contains millions of lines of code), so we focus on the one part of the project which is the scene part, so we specificlly measure the coverage
+Because it is a really big project(it contains millions of lines of code), so we focus on the two specific part of the project which are camera_3d and node_2d, so we specificlly measure the coverage
 of that part with OpenCppCoverage.
 
-![image](https://github.com/SiyuanHong/godot/assets/113177812/9202d40c-1cda-4ff4-b845-fa7c9eaf8603)
+![image](https://github.com/SiyuanHong/godot/assets/113177812/0deb4c66-1d6c-424b-9388-72f9b2aac294)
+
+![image](https://github.com/SiyuanHong/godot/assets/113177812/fac86148-feee-4f9d-af3e-a7e0d279e1c9)
+
+
 
 ### Your own coverage tool
 Siyuan Hong
@@ -29,27 +33,29 @@ Siyuan Hong
 
   name: set_global_rotation
 
-  a link to the commit: https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
+  a link to the commit: https://github.com/godotengine/godot/commit/1f69989fd6d0913a7ab1e973b162d2c026b4a0fa
 
   screenshot:
 
-i identified three branches in this function(branch 0, 1,2):
+i identified two branches in this function:
 
-![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
+![image](https://github.com/SiyuanHong/godot/assets/113177812/e5eae959-3010-4213-b9df-abd98d97b057)
 
- here you can see the first three branches are not reached in the original tests.
+
+ here you can see they are not reached in the original test 
 
   Function 2
 
-  name:get_rotation
+  name:Move_X
 
-  a link to the commit: https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
+  a link to the commit: https://github.com/godotengine/godot/commit/1f69989fd6d0913a7ab1e973b162d2c026b4a0fa
 
   screenshot:
 
- i identified two branches in this function(branch 3,4):
+ i identified two branches in this function:
 
-![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
+![image](https://github.com/SiyuanHong/godot/assets/113177812/20faae7f-c0a4-438a-8786-642b853397ab)
+
 
 they are not reached in the original test.
 
@@ -131,15 +137,14 @@ Siyuan Hong
 test1:
 
 a link to the commit:
-a link to the commit:
-     https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
+    https://github.com/godotengine/godot/commit/ccfc99d5fcb0749b589d83237d67668e7a522451
 
 old result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/5d6d3622-1eed-482c-a810-3847174bed22)
-
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/155ef51b-68f8-4375-871a-fd8d79333f9b)
 
 new result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/751b8bfe-1a7c-46d7-b379-a9f0ca1c455a)
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/3d430dc9-7662-4108-a908-a0047b3cd28a)
+
 
      the coverage improved by 100%.
 
@@ -150,20 +155,20 @@ new result:
 test2:
 
 a link to the commit:
-a link to the commit:
-     https://github.com/godotengine/godot/compare/master...SiyuanHong:godot:hsy
+     https://github.com/godotengine/godot/commit/ccfc99d5fcb0749b589d83237d67668e7a522451
 
 old result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/7ff70bbb-2e1f-4541-a038-69965651f022)
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/1044a01c-5e7c-43e7-8da4-2e9ca6d3beea)
+
 
 new result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/751b8bfe-1a7c-46d7-b379-a9f0ca1c455a)
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/128c93c9-ec07-4f0d-aef9-a03dab3842b0)
 
-     the coverage improved by 50%.
 
-     comment: because these two functions are highly correlated, so i merged the two test cases into just one, but it indeed tested two functions.
-     because the system is complicated, and the arrtibute of "dirty" is protected, hard to figure out how to make its value as dirty, so this test case only
-     cover the first branch.
+     the coverage improved by 100%
+
+     comment: because previously, this function is not covered by any tese case, now i write a new test case which set the second argument as true first to skip if conidtions path first and 
+     then set it as false to enter this conditional path. 
 
 Ruizhe Tao
 
@@ -268,10 +273,10 @@ new result:
 
 
 ## Statement of individual contributions
-Siyuan Hong: write methods for function instrumentation; deal with function set_global_rotation and get_rotation
+Siyuan Hong: write function instrumentation for `set_global_rotation` and `move_x`, and implement tests for these two functions to cover all branches
 
 Ruizhe Tao: write function instrumentation for `set_global_skew` and `set_global_scale`, and implement tests for these two functions to cover all branches
 
-Rui Chen: wrote function instrumentation for `set_environment` and `set_compositor` and their respective tests that coveres all branched conditions.
+Rui Chen: write function instrumentation for `set_environment` and `set_compositor` and implement tests for these two functions to cover all branches
 
-Jiarui Pan: completed implementation of tests for get_relative_transform_to_parent and set_current with the coverage measurement and improvement
+Jiarui Pan: write function instrumentation for `get_relative_transform_to_parent` and `set_current` and implement tests for these two functions to cover all branches
