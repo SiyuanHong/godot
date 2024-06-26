@@ -143,7 +143,7 @@ old result:
      ![image](https://github.com/SiyuanHong/godot/assets/113177812/155ef51b-68f8-4375-871a-fd8d79333f9b)
 
 new result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/3d430dc9-7662-4108-a908-a0047b3cd28a)
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/89324321-d88b-4e21-b945-26352c4365ce)
 
 
      the coverage improved by 100%.
@@ -162,7 +162,7 @@ old result:
 
 
 new result:
-     ![image](https://github.com/SiyuanHong/godot/assets/113177812/128c93c9-ec07-4f0d-aef9-a03dab3842b0)
+     ![image](https://github.com/SiyuanHong/godot/assets/113177812/5ea315a2-2ac6-4886-9d8d-36d895f2ba54)
 
 
      the coverage improved by 100%
@@ -270,6 +270,18 @@ new result:
      Comment: Initially, no tests are responsible for this function, so a new testcase is created. According to the code, two cases diverge, thus, the testcase consists of two subcases: when p_enabled and else. For the first condition, when set_current is true, the test checks if the function together with make_current are called while clear_current is not; likewise, the second subcase checks if the function together with clear_current are called while make_current is not. By do these, all branches are reached by the tests and coverage is improved.
 
 ### Overall
+The old two parts: 
+
+![image](https://github.com/SiyuanHong/godot/assets/113177812/0deb4c66-1d6c-424b-9388-72f9b2aac294)
+
+![image](https://github.com/SiyuanHong/godot/assets/113177812/fac86148-feee-4f9d-af3e-a7e0d279e1c9)
+
+The new two: 
+
+![image](https://github.com/SiyuanHong/godot/assets/113177812/4eb4520b-573d-4769-8f83-2c5c5e0bc135)
+
+![image](https://github.com/SiyuanHong/godot/assets/113177812/e85c2900-fd5e-45c0-a3fe-a522827068b5)
+
 
 
 ## Statement of individual contributions
