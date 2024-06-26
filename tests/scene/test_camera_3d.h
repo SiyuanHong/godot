@@ -145,7 +145,7 @@ TEST_CASE("[SceneTree][Camera3D] Getters and setters") {
         print_coverage();
     }
 
-	SUBCASE("[Camera3D][set_current] When p_enabled") {
+	SUBCASE("When p_enabled") {
         initcoverageDataOfPjrs2(3);
 		test_camera->set_current(true);
 		CHECK(coverageDataOfPjrs2[0] == 1);
@@ -154,7 +154,7 @@ TEST_CASE("[SceneTree][Camera3D] Getters and setters") {
         outputCoverageDataOfPjrs2();
 	}
 
-	SUBCASE("[Camera3D][set_current] Else") {
+	SUBCASE("Else") {
         initcoverageDataOfPjrs2(3);
 		test_camera->set_current(false);
 		CHECK(coverageDataOfPjrs2[0] == 1);

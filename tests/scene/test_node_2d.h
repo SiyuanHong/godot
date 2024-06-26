@@ -123,7 +123,7 @@ TEST_CASE("[SceneTree][Node2D]") {
         print_coverage_funcs_set_global_skew_scale();
     }
 
-    SUBCASE("[Node2D] Test set_global_rotation") {
+    SUBCASE("[Node2D][Set_global_rotation] Test set_global_rotation") {
         initializeCoverageDataSetGlobalRotation(2);
 
         Node2D *parent_node = memnew(Node2D);
@@ -155,7 +155,7 @@ TEST_CASE("[SceneTree][Node2D]") {
         writeCoverageDataSetGlobalRotation();
     }
 
-    SUBCASE("[Node2D] Test Move_x") {
+    SUBCASE("[Node2D][Move_x] Test Move_x") {
         initializeCoverageDataMoveX(2);
         Node2D *node = memnew(Node2D);
         node->move_x(10, false);
@@ -174,7 +174,7 @@ TEST_CASE("[SceneTree][Node2D]") {
         writeCoverageDataMoveX();
     }
 
-	SUBCASE("[Node2D][get_relative_transform_to_parent] When p_parent == this") {
+	SUBCASE("[Node2D][Get_relative_transform_to_parent] When p_parent == this") {
         initcoverageDataOfPjrs(4);
 		Node2D *node = memnew(Node2D);
 		CHECK_EQ(node->get_relative_transform_to_parent(node), Transform2D());
@@ -182,7 +182,7 @@ TEST_CASE("[SceneTree][Node2D]") {
         outputCoverageDataOfPjrs();
 	}
 
-	SUBCASE("[Node2D][get_relative_transform_to_parent] When p_parent == parent_2d") {
+	SUBCASE("[Node2D][Get_relative_transform_to_parent] When p_parent == parent_2d") {
         initcoverageDataOfPjrs(4);
 		Node2D *parent = memnew(Node2D);
 		Node2D *child = memnew(Node2D);
@@ -196,7 +196,7 @@ TEST_CASE("[SceneTree][Node2D]") {
         outputCoverageDataOfPjrs();
 	}
 
-	SUBCASE("[Node2D][get_relative_transform_to_parent] Else") {
+	SUBCASE("[Node2D][Get_relative_transform_to_parent] Else") {
         initcoverageDataOfPjrs(4);
 		Node2D *grandparent = memnew(Node2D);
 		Node2D *parent = memnew(Node2D);
